@@ -14,24 +14,25 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-# 📌 Git Workflow Standard
+# 📌 Git Workflow Standard (Develop -> SIT -> UAT -> Production)
 
-To maintain software quality, ensure high stability, and facilitate a seamless CI/CD pipeline, our development team follows a **Gitflow Variant** workflow tailored for multi-environment deployments. All developers are expected to adhere to these standards.
+To ensure a seamless development process, structured testing, and secure production deployments, our team adheres to a branch environment-based workflow. All developers are expected to follow these standards.
 
 ---
 
 ## 🌲 Branch Structure
 
-Our repository is structured around 4 main types of branches, each mapped to a specific environment:
+Our repository is structured around 5 main types of branches, each mapped directly to a specific deployment environment:
 
 | Branch Name | Target Environment | Description |
 | :--- | :--- | :--- |
 | `production` | **Production** | The most stable branch. Contains production-ready code currently live. *(Direct commits are strictly prohibited).* |
-| `staging` | **Staging / UAT** | Used for integrated testing, QA verification, and User Acceptance Testing (UAT). |
+| `uat` | **User Acceptance Testing** | Used for business validation, product owners (PO), and client sign-off. |
+| `sit` | **System Integration Testing**| Dedicated environment for the QA/Testing team to perform integration and regression testing. |
 | `development` | **Development** | The main integration branch for developers. Used for initial feature merging and internal testing. |
 | `feature/*` | **Local / Sandbox** | Isolated branches used to develop specific features, tasks, or bug fixes. |
 
-> ⚠️ **Note:** The `master` or `main` branch (if present) serves only as the initial project baseline. All active development, testing, and deployments track the environment branches listed above.
+> ⚠️ **Note:** The `master` or `main` branch serves only as the initial project baseline. All active development, testing, and CI/CD pipelines track the environment branches listed above.
 
 ---
 
